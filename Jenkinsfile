@@ -10,7 +10,16 @@ pipeline {
             steps {
                 sh '''
                     cd back
-                    ./gradlew build
+                    ./gradlew build -x test
+                '''
+            }
+        }
+
+        stage('test') {
+            steps {
+                sh '''
+                    cd back
+                    ./gradlew test
                 '''
             }
         }
