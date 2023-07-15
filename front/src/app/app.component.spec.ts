@@ -6,7 +6,7 @@ describe('Test AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    expect(app.title).toEqual('hell');
+    expect(app.title).toEqual('hello');
   });
 
   it('should have a h1 with Hello message', () => {
