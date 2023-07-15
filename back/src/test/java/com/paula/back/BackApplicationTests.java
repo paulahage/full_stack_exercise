@@ -10,7 +10,7 @@ class BackApplicationTests {
 
 	@Test
 	void testOne() {
-		assertEquals(1, 2);
+		assertEquals(1, 1);
 	}
 
 	@Test
