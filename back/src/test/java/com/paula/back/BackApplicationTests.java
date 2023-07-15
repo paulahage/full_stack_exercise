@@ -9,7 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BackApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void testOne() {
 		assertEquals(1, 2);
+	}
+
+	@Test
+	void testTwo() {
+		assertEquals(1, 1);
 	}
 }
