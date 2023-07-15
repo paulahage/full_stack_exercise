@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('build') {
+        stage('build backend') {
             steps {
                 sh '''
                     cd back
@@ -15,11 +15,20 @@ pipeline {
             }
         }
 
-        stage('test') {
+        stage('test backend') {
             steps {
                 sh '''
                     cd back
                     ./gradlew test
+                '''
+            }
+        }
+
+        stage('build frontend') {
+            steps {
+                sh '''
+                    cd front
+                    ng build
                 '''
             }
         }
