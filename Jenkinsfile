@@ -10,7 +10,7 @@ pipeline {
 
             environment {
                 JAVA_OPTS = '-Xmx1g'
-                GRADLE_HOME = '.'
+                GRADLE_USER_HOME = '.'
             }
 
             stages {
@@ -37,6 +37,10 @@ pipeline {
         stage('frontend') {
             agent {
                 docker { image 'node:18.16.0-alpine' }
+            }
+
+            environment {
+                HOME = '.'
             }
 
             stages {
