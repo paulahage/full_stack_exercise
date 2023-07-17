@@ -1,15 +1,16 @@
 pipeline {
     agent none
 
-    environment {
-        JAVA_OPTS = '-Xmx1g'
-    }
-
     stages {
 
         stage('backend'){
             agent {
                 docker { image 'openjdk:21-slim' }
+            }
+
+            environment {
+                JAVA_OPTS = '-Xmx1g'
+                GRADLE_HOME = '.'
             }
 
             stages {
