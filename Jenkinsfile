@@ -5,7 +5,7 @@ pipeline {
 
         stage('backend'){
             agent {
-                docker { image 'openjdk:21-slim' }
+                docker { image 'openjdk:19-jdk-alpine' }
             }
 
             environment {
@@ -36,7 +36,7 @@ pipeline {
 
         stage('frontend') {
             agent {
-                docker { image 'node:18.16.0-alpine' }
+                docker { image 'node:18-alpine' }
             }
 
             environment {
@@ -63,12 +63,6 @@ pipeline {
                     }
                 }
             }
-        }
-    }
-
-    post {
-        always {
-            cleanWs()
         }
     }
 }
