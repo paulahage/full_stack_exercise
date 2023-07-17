@@ -58,7 +58,7 @@ pipeline {
                     steps {
                         sh '''
                             cd front
-                            ng build
+                            npm run build
                         '''
                     }
                 }
